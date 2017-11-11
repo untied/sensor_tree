@@ -1,6 +1,6 @@
-# frontent-sketch
+# Sensor Tree
 
-> Frontend Sketch
+> The small sketch of a frontend application
 
 ## Build Setup
 
