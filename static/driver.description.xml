@@ -1,0 +1,215 @@
+<?xml version="1.0" encoding="UTF-8" standalone="no" ?>
+<at:repository xmlns:at="http://www.smartnet.club/2.0.0/types" 
+  type="devicesdk" 
+  version="2.0.0" 
+  xmlns:ad="http://www.smartnet.club/2.0.0/driver" 
+  xmlns:xs="http://www.w3.org/2001/XMLSchema" 
+  xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" 
+  xsi:schemaLocation="http://www.smartnet.club/2.0.0/types file:/X:/smartnet/DeviceSdk/DeviceSdk/schema/repository.xsd">
+  <driver name="IoUsb" runtime="native" version="1.0">
+    <interfaces>
+      <factory>
+        <device id="iousb" name="IO USB Extension Board" singleInstance="false">
+          <type>
+            <generic/>
+          </type>
+          <interfaces>
+            <factory>
+              <unit id="ioUsbDigitalInput" name="Digital Input" singleInstance="true">
+                <type>
+                  <digitalInput/>
+                </type>
+                <properties>
+                  <property id="channel" name="Channel Number" state="keep" value="1">
+                    <constraints propertyType="xs:int">
+                      <range>
+                        <min>1</min>
+                        <max>16</max>
+                      </range>
+                    </constraints>
+                  </property>
+                </properties>
+                <interfaces>
+                  <eventSource dynamic="false">
+                    <events>
+                      <event id="digitalInputEvent" name="Digital Input Event" spanned="false"/>
+                    </events>
+                  </eventSource>
+                </interfaces>
+              </unit>
+              <unit id="ioUsbDigitalOutput" name="Digital Output" singleInstance="true">
+                <type>
+                  <digitalOutput/>
+                </type>
+                <properties>
+                  <property id="channel" name="Channel Number" state="keep" value="1">
+                    <constraints propertyType="xs:int">
+                      <range>
+                        <min>1</min>
+                        <max>8</max>
+                      </range>
+                    </constraints>
+                  </property>
+                </properties>
+              </unit>
+              <unit id="ioUsbTemperatureSensor" name="Temperature Sensor" singleInstance="true">
+                <type>
+                  <generic/>
+                </type>
+                <interfaces>
+                  <eventSource dynamic="false">
+                    <events>
+                      <event id="temperature" name="Temperature" spanned="false">
+                        <properties>
+                          <property id="min" name="Minimum temperature value" state="keep" value="0">
+                            <constraints propertyType="xs:int"/>
+                          </property>
+                          <property id="max" name="Maximum temperature value" state="keep" value="60">
+                            <constraints propertyType="xs:int"/>
+                          </property>
+                          <property id="delta" name="Maximum deviation value" state="keep" value="10">
+                            <constraints propertyType="xs:int"/>
+                          </property>
+                        </properties>
+                      </event>
+                    </events>
+                  </eventSource>
+                </interfaces>
+              </unit>
+              <unit id="ioUsbDust" name="Dust Sensor" singleInstance="true">
+                <type>
+                  <generic/>
+                </type>
+                <interfaces>
+                  <eventSource dynamic="false">
+                    <events>
+                      <event id="dustValue" name="Dust Value" spanned="false">
+                        <properties>
+                          <property id="min" name="Minimum dust value" state="keep" value="0">
+                            <constraints propertyType="xs:int"/>
+                          </property>
+                          <property id="max" name="Maximum dust value" state="keep" value="100">
+                            <constraints propertyType="xs:int"/>
+                          </property>
+                          <property id="delta" name="Maximum deviation value" state="keep" value="30">
+                            <constraints propertyType="xs:int"/>
+                          </property>
+                        </properties>
+                      </event>
+                    </events>
+                  </eventSource>
+                </interfaces>
+              </unit>
+              <unit id="ioUsbHumidity" name="Humidity Sensor" singleInstance="true">
+                <type>
+                  <generic/>
+                </type>
+                <interfaces>
+                  <eventSource dynamic="false">
+                    <events>
+                      <event id="humidityValue" name="Humidity Value" spanned="false">
+                        <properties>
+                          <property id="min" name="Minimum humidity value" state="keep" value="5">
+                            <constraints propertyType="xs:int">
+                              <range>
+                                <min>0</min>
+                                <max>100</max>
+                              </range>
+                            </constraints>
+                          </property>
+                          <property id="max" name="Maximum humidity value" state="keep" value="90">
+                            <constraints propertyType="xs:int">
+                              <range>
+                                <min>0</min>
+                                <max>100</max>
+                              </range>
+                            </constraints>
+                          </property>
+                          <property id="delta" name="Maximum deviation value" state="keep" value="10">
+                            <constraints propertyType="xs:int">
+                              <range>
+                                <min>0</min>
+                                <max>100</max>
+                              </range>
+                            </constraints>
+                          </property>
+                        </properties>
+                      </event>
+                    </events>
+                  </eventSource>
+                </interfaces>
+              </unit>
+              <unit id="ioUsbInternalVoltage" name="Internal Voltage" singleInstance="true">
+                <type>
+                  <generic/>
+                </type>
+                <interfaces>
+                  <eventSource dynamic="false">
+                    <events>
+                      <event id="internalVoltageValue" name="Internal Voltage Value" spanned="false">
+                        <properties>
+                          <property id="min" name="Minimum voltage value" state="keep" value="3000">
+                            <constraints propertyType="xs:int"/>
+                          </property>
+                          <property id="max" name="Maximum voltage value" state="keep" value="35000">
+                            <constraints propertyType="xs:int"/>
+                          </property>
+                          <property id="delta" name="Maximum deviation value" state="keep" value="100">
+                            <constraints propertyType="xs:int"/>
+                          </property>
+                        </properties>
+                      </event>
+                    </events>
+                  </eventSource>
+                </interfaces>
+              </unit>
+              <unit id="ioUsbExternalVoltage" name="External Voltage" singleInstance="true">
+                <type>
+                  <generic/>
+                </type>
+                <interfaces>
+                  <eventSource dynamic="false">
+                    <events>
+                      <event id="externalVoltageValue" name="External Voltage Value" spanned="false">
+                        <properties>
+                          <property id="min" name="Minimum voltage value" state="keep" value="9000">
+                            <constraints propertyType="xs:int"/>
+                          </property>
+                          <property id="max" name="Maximum voltage value" state="keep" value="15000">
+                            <constraints propertyType="xs:int"/>
+                          </property>
+                          <property id="delta" name="Maximum deviation value" state="keep" value="500">
+                            <constraints propertyType="xs:int"/>
+                          </property>
+                        </properties>
+                      </event>
+                    </events>
+                  </eventSource>
+                </interfaces>
+              </unit>
+            </factory>
+          </interfaces>
+          <specification>
+            <class>IO</class>
+            <vendors>
+              <brand name="Agregator">
+                <model name="AGRG-IO-16/8-WD-DS-1.0.0">
+                  <firmware>1.0.0</firmware>
+                  <firmware>1.0.1</firmware>
+                </model>
+                <model name="AGRG-IO-16/8-INDY-WD-DS-1.0.0">
+                  <firmware>1.0.0</firmware>
+                </model>
+              </brand>
+            </vendors>
+          </specification>
+        </device>
+      </factory>
+      <locateService/>
+    </interfaces>
+  </driver>
+  <signatures>
+    <signature id="id1"/>
+    <signature id="id2"/>
+  </signatures>
+</at:repository>
