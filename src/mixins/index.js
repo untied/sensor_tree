@@ -1,11 +1,9 @@
 
-import Router from '@/router'
-
 // проверка авторизации
 const checkAuth = {
   beforeMount () {
     if (!this.$store.getters.is_authorized) {
-      Router.push('/')
+      this.$router.push('/')
     }
   }
 }

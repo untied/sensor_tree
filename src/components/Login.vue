@@ -46,8 +46,6 @@
 </template>
 
 <script>
-  import Router from '@/router'
-
   import webixButton from '@/components/webix/Button'
   import webixText from '@/components/webix/Text'
 
@@ -83,7 +81,7 @@
         }
         if (this.login === 'guest' && this.passw === 'guest') {
           this.$store.commit('authorize')
-          Router.push('/device')
+          this.$router.push('/device')
         } else {
           window.alert('Было задано неправильное сочетание логина и пароля!')
         }
@@ -91,7 +89,7 @@
     },
     beforeMount () {
       if (this.$store.getters.is_authorized) {
-        Router.push('/device')
+        this.$router.push('/device')
       }
     }
   }

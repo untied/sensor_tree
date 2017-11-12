@@ -33,8 +33,6 @@
 </template>
 
 <script>
-  import Router from '@/router'
-
   const XML_DATA = '/static/driver.description.xml' // путь к XML-документу с описанием устройства
 
   export default {
@@ -47,7 +45,7 @@
     methods: {
       logout () {
         this.$store.commit('unauthorize')
-        Router.push('/')
+        this.$router.push('/')
       }
     },
     created () {
